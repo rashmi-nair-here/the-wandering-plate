@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/svg+xml" href="/images-icons/hand_meal_24dp_FFC9B9_FILL0_wght400_GRAD0_opsz24.svg">
+    <script type="module" src="login.js" defer></script>
+    <script type="module" src="/home-page/home-page.js"></script>
+    <title>The Wandering Plate | My Account</title>
+</head>
+<body>
+    <nav>
+        <ul class="left-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FEFEE3"><path d="M40-440v-80h81q14-127 103-216t216-103v-41h80v41q127 14 216 103t103 216h81v80H40Zm163-80h554q-14-103-92.5-171.5T480-760q-106 0-184.5 68.5T203-520Zm372 80H320v240h222q21 0 40.5-7t35.5-21l166-137q-8-8-18-12t-21-6q-17-3-33 1t-30 15l-108 87H400v-80h146l44-36q5-3 7.5-8t2.5-11q0-10-7.5-17.5T575-440Zm-335 0h-80v280h80v-280Zm0 360h-80q-33 0-56.5-23.5T80-160v-280q0-33 23.5-56.5T160-520h415q85 0 164 29t127 98l27 41-223 186q-27 23-60 34.5T542-120H309q-11 18-29 29t-40 11Zm240-440Z"/></svg>
+        </ul>
+        <ul class="center-nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="/kitchen-page/kitchen-page.html">Kitchen</a></li>
+            <li><a href="/about-us/about-us.html">About Us</a></li>
+        </ul>
+        <ul class="right-nav">
+            <li id="float-right">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#ffc9b9"><path d="M234-276q51-39 114-61.5T480-360q69 0 132 22.5T726-276q35-41 54.5-93T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 59 19.5 111t54.5 93Zm246-164q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q53 0 100-15.5t86-44.5q-39-29-86-44.5T480-280q-53 0-100 15.5T294-220q39 29 86 44.5T480-160Zm0-360q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0-60Zm0 360Z"/></svg>
+                <a href="/login-signup/login.html"><span id="loggedUserName">My Account</span></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container" id="signIn">
+        <h2 class="form-title">Sign In</h2>
+        <form method="post" action="">
+            <div id="signInMessage" class="messageDiv" style="display: none;"></div>
+
+            <div class="input-group">
+                <label for="email">Email ID</label>
+                <br>
+                <input type="text" id="email" placeholder="Email ID" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <br>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <button class="btn" id="submitSignIn">Sign In</button>
+            <br>
+            <button id="signUpButton" type="button">Don't have an account yet?</button>
+        </form>
+    </div>
+    <div class="container" id="signup" style="display: none;">
+        <h2 class="form-title">Create Account</h2>
+        <form method="post" action="">
+            <div id="signUpMessage" class="messageDiv"></div>
+            <div class="input-group">
+                <label for="fName">First Name</label>
+                <input type="text" id="fName" placeholder="First Name" required>
+            </div>
+            <div class="input-group">
+                <label for="lName">Last Name</label>
+                <input type="text" id="lName" placeholder="Last Name" required>
+            </div>
+            <div class="input-group">
+                <label for="rEmail">Email ID</label>
+                <input type="email" id="rEmail" placeholder="Email ID" required>
+            </div>
+            <div class="input-group">
+                <label for="rPassword">Password</label>
+                <input type="password" id="rPassword" placeholder="Password" required>
+            </div>
+            <button class="btn" id="submitSignUp">Create Account</button>
+            <button class="btn" id="signInButton" type="button">Have an account?</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap'); /*header title: script font*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap'); /*serif font*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); /*sans-serif font*/
+
+:root {
+    --background-color: #fefee3;
+    --light-bkg-color: #fefee3;
+    --text-color: #00381d;
+    --accent-color-one: #4d956d;
+    --accent-color-two: #ffc9b9;
+    --header-color: #ad6800;
+    --script-font: "Edu NSW ACT Cursive", cursive;
+    --serif-font: "Source Serif 4", serif;
+    --sans-serif-font: "DM Sans", sans-serif;
+}
+
+body {
+    background-color: var(--light-bkg-color);
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+}
+
+h2 {
+    font-family: var(--script-font);
+}
+
+nav {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: -0.5rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+ul li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--background-color);
+}
+
+ul li a:hover {
+    background-color: var(--accent-color-two);
+    color: var(--text-color);
+    transition: ease-in-out 0.4s;
+}
+
+.right-nav {
+    justify-content: flex-end;
+}
+
+.right-nav > li > a {
+    color: var(--accent-color-two);
+}
+
+.right-nav > li > a:hover {
+    color: var(--accent-color-two);
+    background-color: var(--text-color);
+    font-weight: 600;
+}
+
+.right-nav > li {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav {
+    justify-content: flex-start;
+    margin-left: 1rem;
+}
+
+.container {
+    background-color: var(--accent-color-two);
+    border-radius: 15px;
+    padding: 2rem;
+    padding-right: 3rem;
+    padding-bottom: 3rem;
+    min-width: 400px;
+    transition: ease-in-out 0.5s;
+    height: auto;
+
+    text-align: left;
+    color: var(--text-color);
+    line-height: 1;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-title {
+    text-align: center;
+}
+
+label {
+    font-weight: 500;
+}
+
+input {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--sans-serif-font);
+    border: none;
+    border-radius: 5px;
+    height: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+input::placeholder {
+    color: var(--header-color);
+    opacity: 0.5;
+}
+
+input:active, input:focus {
+    background-color: var(--accent-color-one);
+    color: var(--background-color);
+    outline: none;
+    border: 2px solid var(--background-color);
+    transition: ease-in-out 0.4s;
+}
+
+input:active::placeholder, input:focus::placeholder {
+    color: var(--background-color);
+    transition: ease-in-out 0.5s;
+}
+
+button {
+    background-color: var(--accent-color-one);
+    border: 2px solid var(--text-color);
+    border-radius: 5px;
+    width: 104%;
+    height: 35px;
+    color: var(--background-color);
+    font-family: var(--sans-serif-font);
+    margin-bottom: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--background-color);
+    font-weight: 700;
+    transition: ease-in-out 0.5s;
+}
+
+#signup {
+    height: auto;
+    min-height: 0;
+    transition: ease-in-out 0.5s;
+}
+
+.messageDiv {
+    color: var(--text-color);
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    font-size: 1rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-align: center;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.messageDiv.show {
+    opacity: 1;
+    max-height: 100px;
+    padding: 10px 20px;
+    margin: 1rem;
+}

@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap'); /*header title: script font*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap'); /*serif font*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); /*sans-serif font*/
+
+:root {
+    --background-color: #fefee3;
+    --light-bkg-color: #fefee3;
+    --text-color: #00381d;
+    --accent-color-one: #4d956d;
+    --accent-color-two: #ffc9b9;
+    --header-color: #ad6800;
+    --script-font: "Edu NSW ACT Cursive", cursive;
+    --serif-font: "Source Serif 4", serif;
+    --sans-serif-font: "DM Sans", sans-serif;
+}
+
+body {
+    background-color: var(--light-bkg-color);
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: var(--script-font);
+    color: var(--header-color);
+    font-weight: 500;
+}
+
+nav {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: -0.5rem;
+    margin-bottom: 1rem;
+    z-index: 9998;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+ul li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--background-color);
+}
+
+ul li a:hover {
+    background-color: var(--accent-color-two);
+    color: var(--text-color);
+    transition: ease-in-out 0.4s;
+}
+
+.right-nav {
+    justify-content: flex-end;
+}
+
+.right-nav > li > a {
+    color: var(--accent-color-two);
+}
+
+.right-nav > li > a:hover {
+    color: var(--accent-color-two);
+    background-color: var(--text-color);
+    font-weight: 600;
+}
+
+.right-nav > li {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav {
+    justify-content: flex-start;
+    margin-left: 1rem;
+}
+
+#logUserOut {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-family: var(--sans-serif-font);
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 145px;
+    height: 50px;
+    cursor: pointer;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#logUserOut > svg {
+    display: block;
+    fill: var(--background-color);
+}
+
+#logUserOut:hover {
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.logUserOut {
+    display: none;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: all 0.5s ease;
+    
+    position: fixed;
+    top: 35px;
+    right: 5px;
+    z-index: 9999;
+}
+
+.carousel {
+    width: 43.3vw;
+    /*height: 100vh;*/
+    height: 400px;
+    margin-top: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slide {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    opacity: 0;
+    transition: 0.2s opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide > img {
+    width: 600px;
+    display: block;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    font-family: var(--sans-serif-font);
+    top: 55%;
+    transform: translateY(-55%);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    border-radius: 15px;
+    font-size: 30px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.carousel-button:hover, .carousel-button:focus {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.carousel-button:focus {
+    border: 3px solid var(--text-color, 0.7);
+    transition: 0.3s ease-in-out;
+}
+
+.carousel-button.prev {
+    left: 30.5px;
+    border-radius: 0 15px 15px 0;
+}
+
+.carousel-button.prev:focus {
+    border-left: none;
+}
+
+.carousel-button.next {
+    right: 32px;
+    border-radius: 15px 0 0 15px;
+}
+
+.carousel-button.next:focus {
+    border-right: none;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: 2fr 2fr auto;
+    grid-auto-rows: auto;
+    align-items: start;
+}
+
+.columns > div > p {
+    padding: 0 2rem;
+    font-family: var(--serif-font);
+}
+
+.columns > .buttons {
+    margin-top: 5rem;
+    margin-right: 2rem;
+}
+
+.columns > .buttons > button {
+    width: 200px;
+    height: 65px;
+    border-radius: 15px;
+    margin-bottom: 19px;
+    background-color: var(--accent-color-one);
+    border: none;
+    font-family: var(--sans-serif-font);
+    font-size: 15px;
+    color: var(--background-color);
+    text-align: left;
+    padding: 0px 0px 0px 10px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.columns > .buttons > button > svg {
+    width: 30px;
+    height: 30px;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 3;
+}
+
+#save-to-favorites {
+    background-color: var(--accent-color-one);
+    border-radius: 100%;
+    height: 54px;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent-color-one);
+    cursor: pointer;
+    margin-top: 5rem;
+    margin-right: 3rem;
+}
+
+#save-to-favorites:hover, #save-to-favorites:active {
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+    transition: 0.3s ease-in-out;
+}
+
+.favorites {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0rem;
+}
+
+.favorites > h1 {
+    flex-grow: 1;
+    margin: 0;
+}
+
+.columns > .buttons > #nutritional-facts {
+    margin-bottom: 0px;
+}
+
+#nutritional-facts:hover, #nutritional-facts:active {
+    background-color: var(--text-color);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.nutritional-facts-box {
+    display: none;
+
+    background-color: var(--accent-color-two);
+    width: 500px;
+    border-radius: 15px;
+    text-align: left;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    padding: 0 3rem;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.nutritional-facts-box > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nutritional-facts-box > h1 {
+    font-family: var(--serif-font);
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.nutritional-facts-box > p {
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.nutritional-facts-box > div > p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.nutritional-facts-box > div > h2 {
+    font-family: var(--serif-font);
+    color: var(--text-color);
+    font-size: 40px;
+    margin: 0;
+    font-weight: 450;
+    padding: 0 4rem;
+}
+
+.nutritional-facts-box > h2 {
+    font-family: var(--serif-font);
+    color: var(--text-color);
+    margin: 0;
+    font-weight: 450;
+    padding: 0 1.75rem;
+    font-size: 16px;
+}
+
+.nutritional-facts-box::-webkit-scrollbar {
+    background-color: var(--accent-color-two);
+    border-radius: 0px 15px 15px 0;
+}
+
+.nutritional-facts-box::-webkit-scrollbar-button {
+    background-color: var(--accent-color-two);
+    border-radius: 0px 15px 15px 0;
+}
+
+.nutritional-facts-box::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color-one);
+    border-radius: 15px;
+}
+
+.recipe {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.introduction {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.ingredients {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: 31.5rem;
+    width: 130%;
+    align-self: start;
+    text-align: center;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ingredients > h1 {
+    grid-column: 1 / -1;
+}
+
+.ingredients > div > p {
+    font-family: var(--sans-serif-font);
+}
+
+.buttons {
+    grid-column: 3 / span 2;
+    grid-row: 1;
+}
+
+#center-header {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+hr {
+    border: 3px solid var(--text-color);
+    border-radius: 5px;
+}
+
+hr.light {
+    border: 1px solid var(--text-color);
+}
+
+div.tab {
+    margin-left: 1rem;
+}
+
+div.tab-2 {
+    margin-left: 3rem;
+}
+
+.nutritional-facts-box > #info {
+    margin-bottom: 1.5rem;
+}
+
+ol, #fix {
+    font-family: var(--serif-font);
+    margin-left: 1rem;
+    margin-right: 3rem;
+}
+
+#fix {
+    margin-left: 3.5rem;
+}

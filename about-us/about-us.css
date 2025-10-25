@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap'); /*header title: script font*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap'); /*serif font*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); /*sans-serif font*/
+
+:root {
+    --background-color: #fefee3;
+    --light-bkg-color: #fefee3;
+    --text-color: #00381d;
+    --accent-color-one: #4d956d;
+    --accent-color-two: #ffc9b9;
+    --header-color: #ad6800;
+    --script-font: "Edu NSW ACT Cursive", cursive;
+    --serif-font: "Source Serif 4", serif;
+    --sans-serif-font: "DM Sans", sans-serif;
+}
+
+body {
+    background-color: var(--light-bkg-color);
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: var(--script-font);
+    color: var(--header-color);
+    font-weight: 500;
+}
+
+nav {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: -0.5rem;
+    margin-bottom: 1rem;
+    z-index: 9998;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+ul li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--background-color);
+}
+
+ul li a:hover {
+    background-color: var(--accent-color-two);
+    color: var(--text-color);
+    transition: ease-in-out 0.4s;
+}
+
+.right-nav {
+    justify-content: flex-end;
+}
+
+.right-nav > li > a {
+    color: var(--accent-color-two);
+}
+
+.right-nav > li > a:hover {
+    color: var(--accent-color-two);
+    background-color: var(--text-color);
+    font-weight: 600;
+}
+
+.right-nav > li {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav {
+    justify-content: flex-start;
+    margin-left: 1rem;
+}
+
+#logUserOut {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-family: var(--sans-serif-font);
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 145px;
+    height: 50px;
+    cursor: pointer;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#logUserOut > svg {
+    display: block;
+    fill: var(--background-color);
+}
+
+#logUserOut:hover {
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.logUserOut {
+    display: none;
+    justify-content: flex-end;
+    opacity: 0;
+    transition: all 0.5s ease;
+    
+    position: fixed;
+    top: 35px;
+    right: 5px;
+    z-index: 9999;
+}
+
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#container > h1 {
+    text-align: center;
+}

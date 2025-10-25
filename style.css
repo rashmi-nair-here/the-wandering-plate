@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap'); /*header title: script font*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap'); /*serif font*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap'); /*sans-serif font*/
+
+:root {
+    --background-color: #fefee3;
+    --light-bkg-color: #fefee3;
+    --text-color: #00381d;
+    --accent-color-one: #4d956d;
+    --accent-color-two: #ffc9b9;
+    --header-color: #ad6800;
+    --script-font: "Edu NSW ACT Cursive", cursive;
+    --serif-font: "Source Serif 4", serif;
+    --sans-serif-font: "DM Sans", sans-serif;
+}
+
+body {
+    background-color: var(--light-bkg-color);
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    overflow-y: hidden;
+}
+
+h1 {
+    color: var(--header-color);
+    font-family: var(--script-font);
+    font-weight: 500;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.world-map {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.world-map > img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#worldmap {
+    max-width: 90%;
+    height: 30%;
+}
+
+nav {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: -0.5rem;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+ul li a {
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color: var(--background-color);
+}
+
+.world-map > .pin > span > a, .world-map > .pin > span > a:visited {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.world-map > .pin > span > a:hover {
+    text-decoration: none;
+    color: var(--background-color);
+}
+
+.world-map > .pin > span:hover > a {
+    color: var(--background-color) !important;
+}
+
+ul li a:hover {
+    background-color: var(--accent-color-two);
+    color: var(--text-color);
+    transition: ease-in-out 0.4s;
+}
+
+.right-nav {
+    justify-content: flex-end;
+}
+
+.right-nav > li > a {
+    color: var(--accent-color-two);
+}
+
+.right-nav > li > a:hover {
+    color: var(--accent-color-two);
+    background-color: var(--text-color);
+    font-weight: 600;
+}
+
+.right-nav > li {
+    display: flex;
+    align-items: center;
+}
+
+.left-nav {
+    justify-content: flex-start;
+    margin-left: 1rem;
+}
+
+.world-map .pin {
+    background-color: var(--accent-color-two);
+    position: absolute;
+    width: 0.2em;
+    height: 0.2em;
+    border-radius: 50%;
+    border: 2px solid var(--accent-color-two);
+}
+
+.world-map .pin::before {
+    content: '';
+    background: var(--accent-color-two);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: pulse 1.3s ease-in-out infinite;
+}
+
+.world-map .pin > span {
+    display: inline-block;
+    white-space: nowrap;
+    position: absolute;
+    left: 1em;
+    top: 20%;
+    transform: translateY(-50%);
+    background: var(--accent-color-two);
+    color: var(--text-color);
+    border-radius: 3em;
+    padding: 0.3em 0.6em;
+    font-size: 0.9em;
+}
+
+.world-map .pin > span:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+#japan {
+  top: 40%;
+  left: 81.7%;
+}
+
+#italy {
+  top: 35%;
+  left: 50.35%;
+}
+
+#india {
+  top: 50%;
+  left: 66.7%;
+}
+
+#greece {
+  top: 38%;
+  left: 53%;
+}
+
+#marshall-islands {
+  top: 53.31%;
+  left: 89%;
+}
+
+#ecuador {
+  top: 63%;
+  left: 28%;
+}
+
+#jamaica {
+  top: 51.45%;
+  left: 27.92%;
+}
+
+#morocco {
+  top: 43%;
+  left: 45.7%;
+}
+
+#saudi-arabia {
+  top: 46%;
+  left: 58.3%;
+}
+
+#logUserOut {
+    background-color: var(--text-color);
+    color: var(--background-color);
+    font-family: var(--sans-serif-font);
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 145px;
+    height: 50px;
+    cursor: pointer;
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    fill: var(--background-color);
+}
+
+#logUserOut > svg {
+    display: block;
+}
+
+#logUserOut:hover {
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.logUserOut {
+    display: none;
+    justify-content: flex-end;
+    opacity: 0;
+    padding-top: 50px;
+    transition: all 0.5s ease;
+
+    position: fixed;
+    
+    right: 5px;
+}
+
+#logUserOut > svg {
+    display: block;
+    fill: var(--background-color);
+}
+
+/*#header {
+    display: none;
+}*/
